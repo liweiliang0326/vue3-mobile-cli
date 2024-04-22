@@ -1,0 +1,87 @@
+// ————————————————————————变量——————————————————————————
+
+$nav-height: 30px;
+
+// 页面内模块宽度
+$content-box-width: 706rpx;
+
+// 页面内模块圆角尺寸
+$content-box-radius: 16rpx;
+
+// $IMG_URL: '/lk-city-governance-h5/smart-food-safety/static/img/'; // 本地地址
+// $IMG_URL: 'https://lflkt.enncloud.cn/lk-city-governance-h5/smart-food-safety/static/img/'; // 线上环境地址
+// $IMG_URL: 'https://lflkapp.enncloud.cn/lk-city-governance-h5/smart-food-safety/static/img/'; // 线上环境地址
+
+// ————————————————————————占位符——————————————————————————
+
+// 禁止用户选中 鼠标变为手形
+%unable-select {
+	user-select: none;
+	cursor: pointer;
+}
+
+// 填满父元素
+// 组要父元素 position: relative | absolute;
+%full {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+}
+
+// ————————————————————————混合宏——————————————————————————
+
+// 设置宽高
+@mixin wh($width, $height) {
+	width: $width;
+	height: $height;
+}
+// 背景图
+@mixin bg-img($url, $dirc1, $dirc2, $bgw, $bgh, $repeat) {
+	background: url($url) $dirc1 $dirc2 $repeat;
+	background-size: $bgw $bgh;
+}
+
+// 渐变背景色
+@mixin bg-color($dirc, $color1, $color2) {
+	background-color: $color1;
+	background: linear-gradient(to $dirc, $color1, $color2);
+}
+
+// 设置带圆角背景
+@mixin bg-color-radius($color: #fff, $radius: $content-box-radius) {
+	background: $color;
+	border-radius: $radius;
+}
+
+// 单行超出隐藏为省略号
+@mixin line-hidden() {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+// 多行超出隐藏为省略号
+@mixin lines-hidden($line) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: $line;
+	/* number of lines to show */
+	-webkit-box-orient: vertical;
+}
+
+// 底部 伪类 边框 1px
+@mixin after-1px($color, $top, $right, $bottom, $left) {
+	content: '';
+	height: 1px;
+	background: $color;
+	position: absolute;
+	left: $left;
+	right: $right;
+	top: $top;
+	bottom: $bottom;
+	margin: auto;
+	transform: scaleY(0.5);
+}

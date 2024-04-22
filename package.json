@@ -1,0 +1,36 @@
+{
+  "name": "20240422-vue3-mobile",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "serve": "vite",
+    "build:dev": "vue-tsc && vite build --mode development && node ./build/createZip.js dev",
+    "build:prod": "vue-tsc && vite build --mode production && node ./build/createZip.js prod",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.6.8",
+    "dayjs": "^1.11.10",
+    "lodash-es": "^4.17.21",
+    "vant": "^4.8.10",
+    "vue": "^3.4.21",
+    "vue-router": "4"
+  },
+  "devDependencies": {
+    "@rollup/plugin-inject": "^5.0.5",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@types/lodash-es": "^4.17.12",
+    "@types/node": "^20.12.7",
+    "@types/postcss-pxtorem": "^6.0.3",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "amfe-flexible": "^2.2.1",
+    "postcss-pxtorem": "^6.1.0",
+    "sass": "^1.74.1",
+    "typescript": "^5.2.2",
+    "vconsole": "^3.15.1",
+    "vite": "^5.2.0",
+    "vue-tsc": "^2.0.6"
+  }
+}
